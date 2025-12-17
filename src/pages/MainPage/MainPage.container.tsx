@@ -2,7 +2,7 @@ import React, { useState, useMemo, useCallback } from 'react';
 import { MainPage as MainPagePresentation } from './MainPage';
 import { useFakeWorkflowGenerator } from '../../hooks/useFakeWorkflowGenerator';
 import { useWorkflowStore } from '../../store/useWorkflowStore';
-import { Workflow } from '../../types';
+import { Workflow, WorkflowType } from '../../types';
 
 type SortOption = 'type' | 'name' | 'lastUpdated' | '';
 
@@ -67,7 +67,7 @@ export const MainPageContainer = () => {
       // Create
       const newWorkflow: Workflow = {
         id: crypto.randomUUID(), // distinct ID for client-side
-        type: data.type || 'Workflow',
+        type: data.type || WorkflowType.WORKFLOW,
         name: data.name || 'New Workflow',
         tags: [],
         lastUpdated: new Date().toISOString(),

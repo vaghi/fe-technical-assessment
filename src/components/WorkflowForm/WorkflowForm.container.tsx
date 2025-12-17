@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from 'react';
 import { WorkflowForm } from './WorkflowForm';
-import { Workflow, TagData } from '../../types';
+import { Workflow, TagData, WorkflowType } from '../../types';
 import { AVAILABLE_ICONS } from '../../constants/formOptions';
 
 interface WorkflowFormContainerProps {
@@ -15,7 +15,7 @@ export const WorkflowFormContainer: React.FC<WorkflowFormContainerProps> = ({
     onCancel
 }) => {
     const [name, setName] = useState('');
-    const [type, setType] = useState('Workflow');
+    const [type, setType] = useState<WorkflowType>(WorkflowType.WORKFLOW);
     const [icon, setIcon] = useState(AVAILABLE_ICONS[0]);
     const [tags, setTags] = useState<TagData[]>([]);
 
@@ -27,7 +27,7 @@ export const WorkflowFormContainer: React.FC<WorkflowFormContainerProps> = ({
             setTags(initialData.tags || []);
         } else {
             setName('');
-            setType('Workflow');
+            setType(WorkflowType.WORKFLOW);
             setIcon(AVAILABLE_ICONS[0]);
             setTags([]);
         }
@@ -46,9 +46,9 @@ export const WorkflowFormContainer: React.FC<WorkflowFormContainerProps> = ({
             name={name}
             type={type}
             icon={icon}
-            selectedTags={tags}
+            tags={tags}
             onNameChange={setName}
-            onTypeChange={setType}
+            onTypeChange={(t) => setType(t as WorkflowType)}
             onIconChange={setIcon}
             onTagsChange={handleTagsChange}
             onSave={handleSave}

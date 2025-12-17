@@ -1,61 +1,67 @@
 import React from 'react';
-import { AVAILABLE_ICONS } from '../../constants/formOptions';
-import { TagData } from '../../types';
 import { TagSelector } from '../TagSelector/TagSelector';
+import { TagData, WorkflowType } from '../../types';
+import { AVAILABLE_ICONS } from '../../constants/formOptions';
 import { SpreadsheetIcon } from '../../assets/SpreadsheetIcon';
 
 interface WorkflowFormProps {
     name: string;
     type: string;
     icon: string;
-    selectedTags: TagData[];
-    onNameChange: (value: string) => void;
-    onTypeChange: (value: string) => void;
-    onIconChange: (value: string) => void;
+    tags: TagData[];
+    onNameChange: (name: string) => void;
+    onTypeChange: (type: string) => void;
+    onIconChange: (icon: string) => void;
     onTagsChange: (tags: TagData[]) => void;
     onSave: () => void;
     onCancel: () => void;
-    isSaving?: boolean;
 }
 
 export const WorkflowForm: React.FC<WorkflowFormProps> = ({
     name,
     type,
     icon,
-    selectedTags,
+    tags,
     onNameChange,
     onTypeChange,
     onIconChange,
     onTagsChange,
     onSave,
-    onCancel,
-    isSaving
+    onCancel
 }) => {
     return (
         <div className="flex flex-col gap-6">
-            {/* Name Input */}
             <div className="flex flex-col gap-2">
                 <label className="text-sm font-medium text-gray-700">Name</label>
                 <input
                     type="text"
                     value={name}
                     onChange={(e) => onNameChange(e.target.value)}
-                    placeholder="e.g. Text Generator"
-                    className="px-3 py-2 border border-stroke-primary rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white"
+                    className="w-full h-10 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    placeholder="e.g. Content Generation Workflow"
                 />
             </div>
 
-            {/* Type Select */}
             <div className="flex flex-col gap-2">
                 <label className="text-sm font-medium text-gray-700">Type</label>
-                <select
-                    value={type}
-                    onChange={(e) => onTypeChange(e.target.value)}
-                    className="px-3 py-2 border border-stroke-primary rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white"
-                >
-                    <option value="Workflow">Workflow</option>
-                    <option value="Agent">Agent</option>
-                </select>
+                <div className="relative">
+                    <select
+                        value={type}
+                        onChange={(e) => onTypeChange(e.target.value)}
+                        className="w-full h-10 px-3 appearance-none bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all pr-8"
+                    >
+                        {Object.values(WorkflowType).map((t) => (
+                            <option key={t} value={t}>
+                                {t}
+                            </option>
+                        ))}
+                    </select>
+                    <div className="absolute top-1/2 right-3 -translate-y-1/2 pointer-events-none text-gray-500">
+                        <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                    </div>
+                </div>
             </div>
 
             {/* Icon Selector */}
@@ -82,18 +88,14 @@ export const WorkflowForm: React.FC<WorkflowFormProps> = ({
                 </div>
             </div>
 
-            {/* Tags Checkboxes */}
             <div className="flex flex-col gap-2">
                 <label className="text-sm font-medium text-gray-700">Tags</label>
                 <TagSelector
-                    selectedTags={selectedTags}
-                    onChange={(newTags) => {
-                        onTagsChange(newTags);
-                    }}
+                    selectedTags={tags}
+                    onChange={onTagsChange}
                 />
             </div>
 
-            {/* Actions */}
             <div className="flex justify-end gap-3 pt-4">
                 <button
                     onClick={onCancel}
@@ -103,10 +105,10 @@ export const WorkflowForm: React.FC<WorkflowFormProps> = ({
                 </button>
                 <button
                     onClick={onSave}
-                    disabled={!name.trim() || isSaving}
+                    disabled={!name.trim()}
                     className="px-4 py-2 text-13 font-medium text-white bg-text-primary rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-text-primary disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                    {isSaving ? 'Saving...' : 'Save'}
+                    Save
                 </button>
             </div>
         </div>

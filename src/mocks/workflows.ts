@@ -1,4 +1,4 @@
-import { Workflow } from '../types';
+import { Workflow, WorkflowType } from '../types';
 
 // Helper to subtract time
 const subtractTime = (date: Date, seconds: number) => {
@@ -12,7 +12,7 @@ const now = new Date();
 export const MOCK_WORKFLOWS: Workflow[] = [
   {
     id: 'mock-1',
-    type: 'Workflow',
+    type: WorkflowType.WORKFLOW,
     name: 'Customer Onboarding',
     tags: [{ label: 'Test', color: '#D27DFF' }, { label: 'Marketing', color: '#FF9900' }],
     lastUpdated: subtractTime(now, 86400 * 2), // 2 days ago
@@ -20,7 +20,7 @@ export const MOCK_WORKFLOWS: Workflow[] = [
   },
   {
     id: 'mock-2',
-    type: 'Data Processing',
+    type: WorkflowType.DATA_PROCESSING,
     name: 'Monthly Report Generator',
     tags: [{ label: 'Content Creation', color: '#00A3FF' }],
     lastUpdated: subtractTime(now, 3600), // 1 hour ago
@@ -28,7 +28,7 @@ export const MOCK_WORKFLOWS: Workflow[] = [
   },
   {
     id: 'mock-3',
-    type: 'AI Agent',
+    type: WorkflowType.AGENT,
     name: 'Support Operations Bot',
     tags: [{ label: 'Test', color: '#D27DFF' }, { label: 'Content Creation', color: '#00A3FF' }],
     lastUpdated: subtractTime(now, 604800), // 1 week ago
@@ -36,7 +36,7 @@ export const MOCK_WORKFLOWS: Workflow[] = [
   },
   {
     id: 'mock-4',
-    type: 'Workflow',
+    type: WorkflowType.WORKFLOW,
     name: 'Lead Scoring Pipeline',
     tags: [{ label: 'Marketing', color: '#FF9900' }],
     lastUpdated: now.toISOString(), // Now
@@ -44,7 +44,7 @@ export const MOCK_WORKFLOWS: Workflow[] = [
   },
   {
     id: 'mock-5',
-    type: 'Content',
+    type: WorkflowType.CONTENT,
     name: 'Blog Post Drafts',
     tags: [{ label: 'Content Creation', color: '#00A3FF' }, { label: 'Marketing', color: '#FF9900' }],
     lastUpdated: subtractTime(now, 86400 * 30), // 1 month ago

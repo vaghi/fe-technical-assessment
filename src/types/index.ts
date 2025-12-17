@@ -1,6 +1,13 @@
+export enum WorkflowType {
+  WORKFLOW = 'Workflow',
+  AGENT = 'Agent',
+  CONTENT = 'Content',
+  DATA_PROCESSING = 'Data Processing',
+}
+
 export interface Workflow {
     id: string;
-    type: string;
+    type: WorkflowType;
     name: string;
     tags: TagData[];
     lastUpdated: string;
