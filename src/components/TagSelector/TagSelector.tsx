@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { TagData } from '../../types';
-import { AVAILABLE_TAGS, TAG_COLORS } from '../../constants/formOptions';
-import { PlusIcon } from '../../assets/PlusIcon';
+import { TagData } from '@types';
+import { AVAILABLE_TAGS, TAG_COLORS } from '@constants/formOptions';
+import { PlusIcon } from '@assets/PlusIcon';
 
 interface TagSelectorProps {
     selectedTags?: TagData[];

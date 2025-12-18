@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect } from 'react';
 import { WorkflowForm } from './WorkflowForm';
-import { Workflow, TagData, WorkflowType } from '../../types';
-import { AVAILABLE_ICONS } from '../../constants/formOptions';
+import { Workflow, TagData, WorkflowType } from '@types';
+import { AVAILABLE_ICONS } from '@constants/formOptions';
 
 interface WorkflowFormContainerProps {
     initialData?: Workflow | null;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { MagnifierIcon } from '../../assets/MagnifierIcon';
+import { MagnifierIcon } from '@assets/MagnifierIcon';
 
 interface HeaderProps {
   onSearchChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;

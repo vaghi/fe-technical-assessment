@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { PlusIcon } from '../../assets/PlusIcon';
+import { PlusIcon } from '@assets/PlusIcon';
 
 interface ModalProps {
     isOpen: boolean;

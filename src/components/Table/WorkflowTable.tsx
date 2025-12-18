@@ -1,9 +1,9 @@
 import React from 'react';
-import { Workflow } from '../../types';
-import { TagSelector } from '../TagSelector/TagSelector';
-import { EditIcon } from '../../assets/EditIcon';
-import { DeleteIcon } from '../../assets/DeleteIcon';
-import { SpreadsheetIcon } from '../../assets/SpreadsheetIcon';
+import { Workflow } from '@types';
+import { TagSelector } from '@components/TagSelector/TagSelector';
+import { EditIcon } from '@assets/EditIcon';
+import { DeleteIcon } from '@assets/DeleteIcon';
+import { SpreadsheetIcon } from '@assets/SpreadsheetIcon';
 
 interface WorkflowTableProps {
   data: Workflow[];
@@ -13,7 +13,7 @@ interface WorkflowTableProps {
   isLoading?: boolean;
 }
 
-import { formatTimeAgo } from '../../utils/dateUtils';
+import { formatTimeAgo } from '@utils/dateUtils';
 
 interface WorkflowTableProps {
   data: Workflow[];

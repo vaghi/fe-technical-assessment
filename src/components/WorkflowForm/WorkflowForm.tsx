@@ -1,8 +1,8 @@
 import React from 'react';
-import { TagSelector } from '../TagSelector/TagSelector';
-import { TagData, WorkflowType } from '../../types';
-import { AVAILABLE_ICONS } from '../../constants/formOptions';
-import { SpreadsheetIcon } from '../../assets/SpreadsheetIcon';
+import { TagSelector } from '@components/TagSelector/TagSelector';
+import { TagData, WorkflowType } from '@types';
+import { AVAILABLE_ICONS } from '@constants/formOptions';
+import { SpreadsheetIcon } from '@assets/SpreadsheetIcon';
 
 interface WorkflowFormProps {
     name: string;
@@ -50,7 +50,7 @@ export const WorkflowForm: React.FC<WorkflowFormProps> = ({
                         onChange={(e) => onTypeChange(e.target.value)}
                         className="w-full h-10 px-3 appearance-none bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all pr-8"
                     >
-                        {Object.values(WorkflowType).map((t) => (
+                        {(Object.values(WorkflowType) as string[]).map((t) => (
                             <option key={t} value={t}>
                                 {t}
                             </option>

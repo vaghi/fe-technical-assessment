@@ -1,11 +1,10 @@
 import React from 'react';
-import { WorkflowTable } from '../../components/Table/WorkflowTable';
-import { Workflow } from '../../types';
-import { SidebarContainer } from '../../components/Sidebar/Sidebar.container';
-import { HeaderContainer } from '../../components/Header/Header.container';
-
-import { Modal } from '../../components/Modal/Modal';
-import { WorkflowFormContainer } from '../../components/WorkflowForm/WorkflowForm.container';
+import { WorkflowTable } from '@components/Table/WorkflowTable';
+import { Workflow } from '@types';
+import { SidebarContainer } from '@components/Sidebar/Sidebar.container';
+import { HeaderContainer } from '@components/Header/Header.container';
+import { Modal } from '@components/Modal/Modal';
+import { WorkflowFormContainer } from '@components/WorkflowForm/WorkflowForm.container';
 
 interface MainPageProps {
   data: Workflow[];

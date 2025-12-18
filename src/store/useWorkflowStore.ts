@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { Workflow } from '../types';
+import { Workflow } from '@types';
 
 interface WorkflowStore {
   workflows: Workflow[];

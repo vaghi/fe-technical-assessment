@@ -1,7 +1,7 @@
 import React from 'react';
-import { PlusIcon } from '../../assets/PlusIcon';
-import { TagData } from '../../types';
-import { TAG_COLORS } from '../../constants/formOptions';
+import { PlusIcon } from '@assets/PlusIcon';
+import { TagData } from '@types';
+import { TAG_COLORS } from '@constants/formOptions';
 
 interface TagProps {
   tags?: TagData[];

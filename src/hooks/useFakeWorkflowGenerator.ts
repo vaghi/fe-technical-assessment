@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import AirOps from '@airops/airops-js';
-import { Workflow } from '../types';
-import { useWorkflowStore } from '../store/useWorkflowStore';
+import { Workflow } from '@types';
+import { useWorkflowStore } from '@store/useWorkflowStore';
 import { MOCK_WORKFLOWS } from '../mocks/workflows';
 
 const WORKFLOW_ID = import.meta.env.VITE_AIROPS_WORKFLOW_ID;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Header as HeaderPresentation } from './Header';
-import { useDebounce } from '../../hooks/useDebounce';
+import { useDebounce } from '@hooks/useDebounce';
 
 interface HeaderContainerProps {
   onSortChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;

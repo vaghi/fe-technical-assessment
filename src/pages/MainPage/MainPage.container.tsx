@@ -1,8 +1,8 @@
 import React, { useState, useMemo, useCallback } from 'react';
 import { MainPage as MainPagePresentation } from './MainPage';
-import { useFakeWorkflowGenerator } from '../../hooks/useFakeWorkflowGenerator';
-import { useWorkflowStore } from '../../store/useWorkflowStore';
-import { Workflow, WorkflowType } from '../../types';
+import { useFakeWorkflowGenerator } from '@hooks/useFakeWorkflowGenerator';
+import { useWorkflowStore } from '@store/useWorkflowStore';
+import { Workflow, WorkflowType } from '@types';
 
 type SortOption = 'type' | 'name' | 'lastUpdated' | '';
 

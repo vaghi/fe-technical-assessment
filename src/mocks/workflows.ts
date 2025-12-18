@@ -1,4 +1,4 @@
-import { Workflow, WorkflowType } from '../types';
+import { Workflow, WorkflowType } from '@types';
 
 // Helper to subtract time
 const subtractTime = (date: Date, seconds: number) => {

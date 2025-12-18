@@ -1,4 +1,5 @@
-import { PlusIcon } from '../../assets/PlusIcon';
+import React from 'react';
+import { PlusIcon } from '@assets/PlusIcon';
 
 interface SidebarProps {
   onNewClick?: () => void;
